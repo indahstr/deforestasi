@@ -13,8 +13,7 @@ function NavbarComponent() {
             <Navbar.Brand href="/">
                 <img src="../images/logo/logo-dark.png" className="mr-3 h-6 sm:h-5" alt="logo" />  
             </Navbar.Brand>
-            <div className="flex md:order-2">
-                <Button href="/" className="custom-link bg-[#2E5B00] text-white">Contact Us</Button>
+            <div className="flex md:order-2"> 
                 <Navbar.Toggle />
             </div>
             <Navbar.Collapse>

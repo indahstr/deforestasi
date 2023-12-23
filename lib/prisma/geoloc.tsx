@@ -6,7 +6,7 @@ export async function getGeoLocs(tahun: number) {
             include: {
                 geodatas: {
                     where: {
-                        tahun: tahun,
+                        tahun_mulai: tahun_mulai,
                     }
                 }
             }

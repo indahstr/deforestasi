@@ -70,7 +70,8 @@ model GeoData {
     id                  String      @id @default(auto()) @map("_id") @db.ObjectId
     geoloc_id           String      @db.ObjectId
     geoloc              GeoLocation @relation(fields: [geoloc_id], references: [id], onDelete: Cascade)
-    tahun               Int
+    tahun               String
+    tahun_mulai         Int
     provinsi            String
     kawasan_hutan       Float
     bukan_kawasan_hutan Float

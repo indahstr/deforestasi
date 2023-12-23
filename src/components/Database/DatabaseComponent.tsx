@@ -64,7 +64,7 @@ function DatabaseComponent() {
                     id="search"
                     name="search"
                     type="text"
-                    placeholder="Search..."
+                    placeholder="Jakarta"
                     className="flex-grow px-2 py-1 focus:outline-none"
                     value={currentFilter.search}
                     onChange={({ target }) => { setCurrentFilter({ ...currentFilter, search: target.value }) }}
@@ -74,7 +74,7 @@ function DatabaseComponent() {
                                 setCurrentFilter({ ...currentFilter, mode: "default", toggle: !currentFilter.toggle, page: 1 });
                                 return;
                             } else if (currentFilter.search.length <= 3) {
-                                window.alert("Please enter more than 3 charaters")
+                                window.alert("Masukkan minimal 3 huruf")
                                 return;
                             }
                             setCurrentFilter({ ...currentFilter, mode: "search", toggle: !currentFilter.toggle, page: 1 });
@@ -86,7 +86,7 @@ function DatabaseComponent() {
                         setCurrentFilter({ ...currentFilter, mode: "default", toggle: !currentFilter.toggle, page: 1 });
                         return;
                     } else if (currentFilter.search.length <= 3) {
-                        window.alert("Please enter more than 3 charaters")
+                        window.alert("Masukkan minimal 3 huruf")
                         return;
                     }
                     setCurrentFilter({ ...currentFilter, mode: "search", toggle: !currentFilter.toggle, page: 1 });

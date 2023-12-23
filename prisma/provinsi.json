@@ -20611,9 +20611,10 @@
         ]
       }
     },
+    
     {
       "type": "Feature",
-      "properties": { "prov_id": "64", "name": "KALIMANTAN TIMUR" },
+      "properties": { "prov_id": "65", "name": "KALIMANTAN TIMUR DAN KALIMANTAN UTARA" },
       "geometry": {
         "type": "MultiPolygon",
         "coordinates": [
@@ -22360,17 +22361,9 @@
               [118.2027814, 2.3585872],
               [118.1988449, 2.3682237]
             ]
-          ]
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": { "prov_id": "65", "name": "KALIMANTAN UTARA" },
-      "geometry": {
-        "type": "MultiPolygon",
-        "coordinates": [
+          ],
           [
+
             [
               [116.7638626, 3.5891774],
               [116.7757262, 3.5704847],

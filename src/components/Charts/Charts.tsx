@@ -93,8 +93,7 @@ const options: ApexOptions = {
   xaxis: {
     type: "category",
     categories: [
-      "2013",
-      "2014",
+      "2013-2014",
       "2015",
       "2016",
       "2017",
@@ -102,8 +101,7 @@ const options: ApexOptions = {
       "2019",
       "2020",
       "2021",
-      "2022",
-      "2023", 
+
     ],
     axisBorder: {
       show: false,
@@ -119,7 +117,7 @@ const options: ApexOptions = {
       },
     },
     min: 0,
-    max: 3000,
+    max: 1000000,
   },
 };
 
@@ -135,11 +133,11 @@ const Charts: React.FC = () => {
     series: [
       {
         name: "Deforestasi Hutan",
-        data: [1200, 1400, 2000, 1000, 1200, 1600, 2000, 2300, 1600, 1000, 1400 ],
+        data: [292533.9, 815607.5, 431266.3, 297183.2, 223323.9, 375866.7, 66995.7, 83399.3 ],
       },
       {
         name: "Deforestasi APL",
-        data: [800, 700, 1200, 500, 700, 200, 600, 800, 700, 600, 600],
+        data: [104837.9, 276574, 197910.6, 182827.6, 216115.2, 86591.8, 48464.1, 37306.5 ],
       },
 
       
@@ -169,7 +167,7 @@ const Charts: React.FC = () => {
             </span>
             <div className="w-full">
               <p className="font-semibold text-secondary">Deforestasi Hutan</p>
-              <p className="text-sm font-medium">2013-2023</p>
+              <p className="text-sm font-medium">2013-2021</p>
             </div>
           </div>
           <div className="flex min-w-47.5">
@@ -178,7 +176,7 @@ const Charts: React.FC = () => {
             </span>
             <div className="w-full">
               <p className="font-semibold text-primary">Deforestasi APL</p>
-              <p className="text-sm font-medium">2013-2023</p>
+              <p className="text-sm font-medium">2013-2021</p>
             </div>
           </div>
         </div>

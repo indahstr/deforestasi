@@ -9,7 +9,8 @@ import { writeFileSync } from "fs";
 
 
 interface GeoDataInput {
-    tahun: number,
+    tahun: string,
+    tahun_mulai: number,
     provinsi: string,
     kawasan_hutan: number,
     bukan_kawasan_hutan: number,
@@ -47,6 +48,7 @@ function deforestasijson() {
     const res = data.map((item) => {
         const temp: GeoDataInput = {
             tahun: item.tahun,
+            tahun_mulai: item.tahun_mulai,
             provinsi: item.provinsi,
             kawasan_hutan: item.kawasan_hutan,
             bukan_kawasan_hutan: item.bukan_kawasan_hutan,

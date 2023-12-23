@@ -7,7 +7,7 @@ export async function getGeoDatas(take: number, page: number) {
             take: take,
             orderBy: [
                 {
-                    tahun: 'asc',
+                    tahun_mulai: 'asc',
                 },
                 {
                     id: 'asc',
@@ -16,6 +16,51 @@ export async function getGeoDatas(take: number, page: number) {
         })
         const count = await prisma.geoData.count();
         return { res, count };
+    } catch (error) {
+        return { error };
+    }
+}
+
+export async function chart() {
+    try{
+        const chartData = await prisma.geoData.groupBy({
+            by: ['tahun_mulai'],
+            _sum: {
+            kawasan_hutan: true,
+            bukan_kawasan_hutan: true,
+            },
+            orderBy: [
+                {
+                    tahun_mulai: 'asc',
+                }, 
+            ] 
+        })
+        return { chartData };
+    }
+    catch (error) {
+        return { error };
+    }
+}
+
+
+export async function getYear() {
+    try {
+        const res = await prisma.geoData.findMany({
+            distinct: ['tahun_mulai'],
+            select: {
+              tahun_mulai: true,
+            },
+            orderBy: [
+                {
+                    tahun_mulai: 'asc',
+                },
+                {
+                    id: 'asc',
+                },
+            ] 
+        })
+  
+        return { res };
     } catch (error) {
         return { error };
     }
@@ -43,21 +88,20 @@ export async function getGeoDataByName(name: string, take: number, page: number)
                 OR: [
                     {
                         provinsi: {
-                            startsWith: name,
-                            mode: "insensitive"
-                        }
+                            contains: name,
+                            mode: "insensitive",
+                        },
                     },
                     {
-                        provinsi: {
-                            endsWith: name,
-                            mode: "insensitive"
-                        }
-                    }
-                ]
+                        tahun_mulai: {
+                            equals: isNaN(Number(name)) ? undefined : Number(name),
+                        },
+                    },
+                ],
             },
             orderBy: [
                 {
-                    tahun: 'asc',
+                    tahun_mulai: 'asc',
                 },
                 {
                     id: 'asc',
@@ -69,24 +113,24 @@ export async function getGeoDataByName(name: string, take: number, page: number)
                 OR: [
                     {
                         provinsi: {
-                            startsWith: name,
-                            mode: "insensitive"
-                        }
+                            contains: name,
+                            mode: "insensitive",
+                        },
                     },
                     {
-                        provinsi: {
-                            endsWith: name,
-                            mode: "insensitive"
-                        }
-                    }
-                ]
-            }
+                        tahun_mulai: {
+                            equals: isNaN(Number(name)) ? undefined : Number(name),
+                        },
+                    },
+                ],
+            },
         });
         return { res, count };
     } catch (error) {
         return { error };
     }
 }
+
 
 export async function addGeoData(id: string, data: any) {
     try {

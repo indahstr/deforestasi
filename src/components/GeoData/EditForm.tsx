@@ -10,6 +10,7 @@ export default function EditForm() {
 
     const [formData, setFormData] = useState({
         tahun: "",
+        tahun_mulai: "",
         prov: "",
         kw_hutan: "",
         kw_bukan_hutan: "",
@@ -29,6 +30,7 @@ export default function EditForm() {
         if (res.status == 200) {
             setFormData({
                 tahun: data.tahun,
+                tahun_mulai: data.tahun_mulai,
                 prov: data.provinsi,
                 kw_hutan: data.kawasan_hutan,
                 kw_bukan_hutan: data.bukan_kawasan_hutan,
@@ -46,7 +48,8 @@ export default function EditForm() {
             body: JSON.stringify({
                 id: param ? param : "",
                 data: {
-                    tahun: Number(formData.tahun),
+                    tahun_mulai: Number(formData.tahun_mulai),
+                    tahun: formData.tahun_mulai + '-' + (Number(formData.tahun_mulai) + 1),
                     provinsi: formData.prov,
                     kawasan_hutan: Number(formData.kw_hutan),
                     bukan_kawasan_hutan: Number(formData.kw_bukan_hutan),
