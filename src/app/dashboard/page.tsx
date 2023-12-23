@@ -26,14 +26,10 @@ const Dashboard: React.FC = async() => {
         <div className="w-full 2xl:px-30 px-10 pt-10">
             <Breadcrumb pageName="Dashboard" /> 
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-                <CardDataStats title="Deforestasi Hutan" total="83399.3ha" > 
-                </CardDataStats>
-                <CardDataStats title="Deforestasi APL" total="37306.5ha" >  
-                </CardDataStats>
-                <CardDataStats title="Total Deforestasi" total="120705.8ha"  > 
-                </CardDataStats>
-                <CardDataStats title="Total Provinsi" total="34" > 
-                </CardDataStats>
+                <CardDataStats title="Deforestasi Hutan" total="83399.3ha" /> 
+                <CardDataStats title="Deforestasi APL" total="37306.5ha" /> 
+                <CardDataStats title="Total Deforestasi" total="120705.8ha"  /> 
+                <CardDataStats title="Total Provinsi" total="34" /> 
             </div>
 
             <div className="mt-4 grid grid-cols-6 w-full gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
