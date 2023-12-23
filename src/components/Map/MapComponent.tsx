@@ -156,7 +156,7 @@ const MapComponent = () => {
       method: "GET",
     });
     const { data }: { data: Geolocs[] } = await res.json();
-    const { data: dataYear }: { dataYear: any } = await yearDD.json();
+    const { data: dataYear }: { data: any } = await yearDD.json();
     setYearDD(dataYear);
     const result = calculate(data);
     setGeolocs(result);
@@ -238,7 +238,7 @@ const MapComponent = () => {
             {yearDD?.map((item: any) => {
               console.log(item);
               return (
-                <Dropdown.Item onClick={() => setYear(item.tahun)}>
+                <Dropdown.Item key={item} onClick={() => setYear(item.tahun)}>
                   {item.tahun}
                 </Dropdown.Item>
               );
