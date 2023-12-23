@@ -1,6 +1,6 @@
 import prisma from ".";
 
-export async function getGeoLocs(tahun: number) {
+export async function getGeoLocs(tahun_mulai: number) {
     try {
         const res = await prisma.geoLocation.findMany({
             include: {
