@@ -98,7 +98,7 @@ function LoginForm() {
                       id="password"
                       name="password"
                       type="password"
-                      placeholder="Masukkan lebih dari 6 karakter dan 1 huruf kapital"
+                      placeholder="Masukkan password (kombinasi huruf dan angka)"
                       className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
@@ -138,7 +138,7 @@ function LoginForm() {
                         fontWeight: "bold",
                       }}
                     >
-                      Sign In
+                      Masuk
                     </span>
                   </button>
                 </div>
