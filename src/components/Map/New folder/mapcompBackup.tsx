@@ -172,7 +172,7 @@ const MapComponent = () => {
     <div className="relative flex flex-col items-center h-full">
       {loading ? <Loader /> : null}
       <MapContainer
-        center={[-4.8675549, 119.1377759]}
+        center={[-6.8675549, 117.1377759]}
         zoom={5}
         scrollWheelZoom={true}
         style={{
@@ -230,67 +230,142 @@ const MapComponent = () => {
         })}
       </MapContainer>
       <div className="fixed  top-20 right-4  z-1200 flex items-start w-fit   rounded p-2">
-        <Dropdown
-          label="Tahun"
-          dismissOnClick={false}
-          style={{ backgroundColor: "#2E5B00", color: "white" }}
-        >
-          {yearDD?.map((item: any) => {
-            console.log(item);
-            return (
-              <Dropdown.Item key={item} onClick={() => setYear(item.tahun_mulai)}>
-                {item.tahun_mulai}
-              </Dropdown.Item>
-            );
-          })}
-        </Dropdown>
+<Dropdown
+            label="Tahun"
+            dismissOnClick={false}
+            style={{ backgroundColor: "#2E5B00", color: "white" }} 
+          >
+            {yearDD?.map((item: any) => {
+              console.log(item);
+              return (
+                <Dropdown.Item key={item} onClick={() => setYear(item.tahun)}>
+                  {item.tahun}
+                </Dropdown.Item>
+              );
+            })}
+          </Dropdown>
       </div>
-      <div>
-      <Card className=" fixed w-full justify-between bottom-0 z-1200 left-0 items-end text-black bg-white rounded p-2">
-        {/* <div className="flex items-center justify-between">
+      <div className="fixed  bottom-2    z-1200 flex items-start w-fit bg-dark shadow-md rounded p-2">
+        <div>
+          <Card className="max-w-sm">
+            <div className="flex items-center justify-between">
+              <h6 className="text-sm font-bold leading-none text-gray-900 dark:text-white">
+                Information
+              </h6>
+            </div>
+            <div className="flow-root">
+            
+              <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+                <li className="py-1 sm:py-2">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        Deforestasi tinggi
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      <div className="w-3 h-3 mx-2 bg-green-500 rounded-full"></div>{" "}
+                      {/* Hijau */}
+                    </div>
+                  </div>
+                </li>
+                <li className="py-1 sm:py-2">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        Deforestasi sedang{" "}
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      <div className="w-3 h-3 mx-2 bg-yellow-300 rounded-full"></div>{" "}
+                      {/* Kuning */}
+                    </div>
+                  </div>
+                </li>
+                <li className="py-1 sm:py-2">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        Deforestasi rendah{" "}
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      <div className="w-3 h-3 mx-2 bg-red-500 rounded-full"></div>{" "}
+                      {/* Merah */}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </Card>
+        </div>
+        <div>
+          <Card className="max-w-sm ml-4">
+            {/* <div className=" flex items-center justify-between">
               <h6 className="text-sm font-bold leading-none text-gray-900 dark:text-white">
                 Information
               </h6>
             </div> */}
-        <div className="flow-root">
-          <ul className="flex divide-x px-6 items-center divide-gray-200 dark:divide-gray-700">
-            <li className="py-1 sm:py-2 px-4 flex items-center space-x-4">
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
-                  Deforestasi tinggi
-                </p>
-              </div>
-              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                <div className="w-3 h-3 mx-2 bg-green-500 rounded-full"></div>{" "}
-                {/* Hijau */}
-              </div>
-            </li>
-            <li className="py-1 px-4 sm:py-2 flex items-center space-x-4">
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
-                  Deforestasi sedang{" "}
-                </p>
-              </div>
-              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                <div className="w-3 h-3 mx-2 bg-yellow-300 rounded-full"></div>{" "}
-                {/* Kuning */}
-              </div>
-            </li>
-            <li className="py-1 px-4 sm:py-2 flex items-center space-x-4">
-              <div className="min-w-0 flex-1">
-                <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
-                  Deforestasi rendah{" "}
-                </p>
-              </div>
-              <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-                <div className="w-3 h-3 mx-2 bg-red-500 rounded-full"></div>{" "}
-                {/* Merah */}
-              </div>
-            </li>
-          </ul>
+            <div className="flow-root">
+              <ul className="divide-y divide-gray-200 dark:divide-gray-700">
+                <li className="py-1 sm:py-2">
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        n
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      {calculations.n}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        std
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      {calculations.std}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        upper
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      {calculations.upper}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        mean
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      {calculations.mean}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-4">
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-gray-900 dark:text-white">
+                        lower
+                      </p>
+                    </div>
+                    <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                      {calculations.lower}
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </Card>
+          
         </div>
-      </Card>
-    </div>
+      </div>
     </div>
   );
 };

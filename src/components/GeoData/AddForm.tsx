@@ -96,7 +96,7 @@ export default function AddForm() {
           provinsi: formData.prov,
           kawasan_hutan: Number(formData.kw_hutan),
           bukan_kawasan_hutan: Number(formData.kw_bukan_hutan),
-          total_deforestasi: Number(formData.total),
+          total_deforestasi: Number(formData.kw_hutan) + Number(formData.kw_bukan_hutan),
         },
       }),
     });
@@ -162,7 +162,7 @@ export default function AddForm() {
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Latitude"
+                  placeholder="Latitude"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.lat}
                   disabled
@@ -175,7 +175,7 @@ export default function AddForm() {
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Longitude"
+                  placeholder="Longitude"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.lng}
                   disabled
@@ -188,7 +188,7 @@ export default function AddForm() {
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Year"
+                  placeholder="Tahun"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.tahun_mulai}
                   onChange={({ target }) =>
@@ -199,11 +199,11 @@ export default function AddForm() {
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
-                  Provinsi
+                  Provinsi <span className="text-meta-1">*</span>
                 </label>
                 <input
                   type="text"
-                  placeholder="Enter Provinsi"
+                  placeholder="Provinsi"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.prov}
                   onChange={({ target }) =>
@@ -215,11 +215,11 @@ export default function AddForm() {
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
-                  Kawasan Hutan
+                  Kawasan Hutan <span className="text-meta-1">*</span>
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Kawasan Hutan"
+                  placeholder="Angka Deforestasi Kawasan Hutan"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.kw_hutan}
                   onChange={({ target }) =>
@@ -234,7 +234,7 @@ export default function AddForm() {
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Bukan Kawasan Hutan"
+                  placeholder="Angka Deforestasi Bukan Kawasan Hutan"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                   value={formData.kw_bukan_hutan}
                   onChange={({ target }) =>
@@ -245,16 +245,17 @@ export default function AddForm() {
 
               <div className="mb-4.5">
                 <label className="mb-2.5 block text-black dark:text-white">
-                  Total Deforestasi
+                  Total Deforestasi <span className="text-meta-1">*</span>
                 </label>
                 <input
                   type="number"
-                  placeholder="Enter Total Deforestasi"
+                  placeholder="Total Deforestasi"
                   className="w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
-                  value={formData.total}
+                  value={Number(formData.kw_hutan) + Number(formData.kw_bukan_hutan)}
                   onChange={({ target }) =>
                     setFormData({ ...formData, total: target.value })
                   }
+                  disabled
                 />
               </div>
 
@@ -262,7 +263,7 @@ export default function AddForm() {
                 className="flex w-full justify-center rounded bg-primary p-3 font-medium text-white"
                 type="submit"
               >
-                Submit
+                Simpan
               </button>
             </div>
           </form>

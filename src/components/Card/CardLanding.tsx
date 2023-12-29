@@ -9,7 +9,7 @@ function CardLanding() {
       <h5 className="text-2xl mt-60 font-bold tracking-tight text-gray-900 dark:text-white text-center">
         Cara Penggunaan
       </h5>
-      <div className="grid grid-cols-2 mt-8 gap-10">
+      <div className="grid grid-cols-2 mt-8  gap-10">
         <Card className="max-w-sm justify-self-end bg-[#EBF4EC] border-[#165728]"> 
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
             Peta Tematik

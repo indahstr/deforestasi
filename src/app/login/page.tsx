@@ -5,8 +5,8 @@ import { redirect } from "next/navigation";
 import LoginForm from "@/components/Login/LoginForm";
 
 export const metadata: Metadata = {
-    title: "Signin Page",
-    description: "This is Signin page",
+    title: "Masuk",
+    description: "Masuk sebagai Administrator",
     // other metadata
 };
 

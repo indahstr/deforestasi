@@ -1,6 +1,7 @@
 
 import React from "react";
 import Charts from "@/components/Charts/Charts";
+import ChartsProv from "@/components/Charts/ChartsProv";
 import CardDataStats from "@/components/CardDataStats";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 // import { useSession } from "next-auth/react";
@@ -31,10 +32,14 @@ const Dashboard: React.FC = async() => {
                 <CardDataStats title="Total Deforestasi" total="120705.8ha"  /> 
                 <CardDataStats title="Total Provinsi" total="34" /> 
             </div>
+            <div className="mt-4 grid grid-cols-1 gap-4 text-sm md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
+                <CardDataStats title="Deforestasi Tertinggi" total="Kalimantan Timur dan Utara" /> 
+                <CardDataStats title="Deforestasi Terendah" total="DIY dan Banten" />  
+            </div>
 
             <div className="mt-4 grid grid-cols-6 w-full gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
                 <Charts />
-
+                {/* <ChartsProv /> */}
             </div>
         </div>
     );

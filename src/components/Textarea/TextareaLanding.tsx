@@ -13,7 +13,7 @@ function TextareaLanding() {
           <Textarea
             className="mx-auto w-2/3 py-4 bg-[#EBF4EC] border-[#165728] focus:outline-none focus:border-blue-500 mt-5"
           />
-          <Button type="submit" className="mx-auto mt-4 bg-[#2E5B00] hover:bg-[#EFBE55] font-semibold text-white">Submit</Button>
+          <Button type="submit" className="mx-auto mt-4 bg-[#2E5B00] hover:bg-[#EFBE55] font-semibold text-white">Kirim</Button>
         </div>
       </form>
     </div>

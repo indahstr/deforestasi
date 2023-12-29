@@ -64,7 +64,7 @@ function DatabaseComponent() {
                     id="search"
                     name="search"
                     type="text"
-                    placeholder="Jakarta"
+                    placeholder="Misal: 2016, Jakarta"
                     className="flex-grow px-2 py-1 focus:outline-none"
                     value={currentFilter.search}
                     onChange={({ target }) => { setCurrentFilter({ ...currentFilter, search: target.value }) }}

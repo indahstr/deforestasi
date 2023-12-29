@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Loader from "@/components/common/Loader";
+import ModalsComp from "@/components/Modals/ModalsComp";
 import { Pagination, Button } from "flowbite-react";
 import { useEffect, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
@@ -92,7 +93,7 @@ const DatabaseAdminComp = () => {
               id="search"
               name="search"
               type="text"
-              placeholder="Jakarta"
+              placeholder="Misal: 2016, Jakarta"
               className="flex  mr-2 rounded dark:bg-boxdark  focus:outline-none"
               value={currentFilter.search}
               onChange={({ target }) => {
