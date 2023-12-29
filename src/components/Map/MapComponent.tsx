@@ -229,7 +229,7 @@ const MapComponent = () => {
           );
         })}
       </MapContainer>
-      <div className="fixed  top-20 right-4  z-1200 flex items-start w-fit   rounded p-2">
+      <div className="fixed  top-22 right-4  z-1200 flex items-start w-fit   rounded p-2">
         <Dropdown
           label="Tahun"
           dismissOnClick={false}
