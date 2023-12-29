@@ -116,7 +116,7 @@ const DropdownUser = (props: {
                             fill=""
                         />
                     </svg>
-                    Log Out
+                    Keluar
                 </button>
             </div>
             {/* <!-- Dropdown End --> */}
